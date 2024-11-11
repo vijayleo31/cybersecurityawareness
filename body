@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #0d47a1;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Sections */
+section {
+    padding: 40px;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s ease-in-out forwards;
+}
+
+/* Delay each section for staggered effect */
+.introduction { animation-delay: 0.5s; }
+.tips { animation-delay: 1s; }
+.threats { animation-delay: 1.5s; }
+.resources { animation-delay: 2s; }
+.call-to-action { animation-delay: 2.5s; }
+
+h2 {
+    color: #0d47a1;
+    margin-bottom: 15px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Tips */
+.tips ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.tips ul li {
+    margin-bottom: 10px;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Threats */
+.threats .threat {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInFromLeft 1s ease-in-out forwards;
+}
+
+.threat h3 {
+    color: #d32f2f;
+}
+
+/* Resources */
+.resources ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resources ul li {
+    margin-bottom: 10px;
+}
+
+.resources ul li a {
+    color: #0d47a1;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Underline effect on hover */
+.resources ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #0d47a1;
+    left: 0;
+    bottom: -2px;
+    transition: width 0.3s;
+}
+
+.resources ul li a:hover::after {
+    width: 100%;
+}
+
+/* Call to Action */
+.call-to-action {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.call-to-action form {
+    margin-top: 20px;
+}
+
+.call-to-action input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    animation: slideUp 1s ease-in-out forwards;
+}
+
+.call-to-action button {
+    padding: 10px 20px;
+    background-color: #0d47a1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: bounceIn 1s ease-in-out forwards;
+}
+
+.call-to-action button:hover {
+    background-color: #1565c0;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 3s;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
